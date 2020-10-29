@@ -1,0 +1,118 @@
+package com.quizApplication1;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// quizApplication
+        Game game=new Game();
+        game.initGame();
+        game.play();
+    }
+}
+
+//package com.quizApplication1;
+
+import java.util.Scanner;
+
+public class Player {
+    Scanner sc= new Scanner(System.in);
+    String name;
+    int score;
+    public void getDetails(){
+        System.out.println("enter your name");
+        name=sc.next();
+    }
+
+}
+
+//package com.quizApplication1;
+import java.util.Scanner;
+public class Question {
+     String question,option1,option2,option3,option4;
+     int correctAnswer,userAnswer;
+     Scanner sc=new Scanner(System.in);
+     public boolean askQuestion()
+     {
+         System.out.println(question);
+         System.out.println("1. "+option1);
+         System.out.println("2. "+option2);
+         System.out.println("3. "+option3);
+         System.out.println("4. "+option4);
+         System.out.print("enter the correct option: ");
+         userAnswer=sc.nextInt();
+         if(userAnswer==correctAnswer)
+         {
+             return true;
+         }
+         return false;
+     }
+
+//package com.quizApplication1;
+
+public class Game
+{
+
+    Question[] questions = new Question[3];
+    Player player = new Player();
+
+    String[] questionsData = {"which is worlds populus country", "which is the fastest animal", "find a reptile"};
+    String[] options1 = {"america", "dog", "elephant"};
+    String[] options2 = {"china", "rabbit", "crocodile"};
+    String[] options3 = {"india", "cheetah", "mouse"};
+    String[] options4 = {"brazil", "monkey", "lion"};
+    int[] answers = {2, 3, 2};
+
+    public void initGame()
+    {
+
+
+        for (int i = 0; i < 3; i++)
+        {
+            questions[i] = new Question();
+            questions[i].question = questionsData[i];
+            questions[i].option1 = options1[i];
+            questions[i].option2 = options2[i];
+            questions[i].option3 = options3[i];
+            questions[i].option4 = options4[i];
+            questions[i].correctAnswer = answers[i];
+
+        }
+    }
+
+    public void play()
+    {
+        player.getDetails();
+        for (int i = 0; i < 3; i++)
+        {
+            boolean status = questions[i].askQuestion();
+
+            if (status == true)
+            {
+                System.out.println("correct answer");
+                player.score = player.score + 5;
+            } else
+                {
+                System.out.println("wrong answer");
+            }
+
+
+
+
+        }
+        if (player.score >= 5)
+        {
+            System.out.println("congrats "+player.name + " your score is " + player.score);
+
+        }
+        else
+            System.out.println("sorry "+player.name+" you need to work more");
+
+    }
+
+}
+
+
+}
+
+
+
