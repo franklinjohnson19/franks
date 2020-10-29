@@ -1,0 +1,107 @@
+package com.grade;
+
+import java.util.Scanner;
+
+public class Main{
+
+
+
+public static void main(String[] args) {
+    int science,english,tamil,maths,social_science,total;
+    float percentage;
+    Scanner sc= new Scanner(System.in);
+    System.out.println("enter your Science marks out of 100");
+    science= sc.nextInt();
+    System.out.println("enter your English marks out of 100");
+    english= sc.nextInt();
+    System.out.println("enter your Tamil marks out of 100");
+    tamil= sc.nextInt();
+    System.out.println("enter your Maths marks out of 100");
+    maths= sc.nextInt();
+    System.out.println("enter your Social science marks out of 100");
+    social_science= sc.nextInt();
+    total=science+english+tamil+maths+social_science;
+    percentage= ((total*100)/500);
+    System.out.println("the percentage is "+percentage+"%");
+    if(science>=35 && english>=35 && tamil>=35 && maths>=35 && social_science>=35){
+        if (percentage>=50 && percentage<60) {
+            System.out.println("you got E grade");
+        }
+        else if (percentage>=60 && percentage<70) {
+            System.out.println("you got D grade");
+        }
+        else if (percentage>=70 && percentage<80) {
+            System.out.println("you got C grade");
+        }
+        else if (percentage>=80 && percentage<90) {
+            System.out.println("you got B grade");
+        }
+        else if (percentage >=90 && percentage<=100) {
+            System.out.println("you got A grade");
+        }
+        else{
+            System.out.println("you have failed..!");
+        }
+
+    }
+    else{
+        System.out.println("You have failed due to less than 35 marks in one subject or above!!!!");
+    }
+}
+
+}
+-------------------------------------------------------------------------------------------------------------
+
+package com.employee1;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args)
+    {
+        int dt,mn,yr,sl,tx;
+        String nm;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("enter employee name");
+
+        nm=sc.nextLine();
+        System.out.println("enter employee birth date");
+        dt=sc.nextInt();
+        System.out.println("enter employee birth month");
+        mn=sc.nextInt();
+        System.out.println("enter employee birth year");
+        yr=sc.nextInt();
+        System.out.println("enter employee salary");
+        sl=sc.nextInt();
+        int age=2019-yr;
+        if(sl>=500000)
+        {
+            tx=(sl*20)/100;
+        }
+        else if(sl>=400000&&sl<500000)
+        {
+            tx=(sl*15)/100;
+        }
+        else if(sl>=300000&&sl<400000)
+        {
+            tx=(sl*10)/100;
+        }
+        else if(sl>=200000&&sl<300000)
+        {
+            tx=(sl*5)/100;
+        }
+        else
+        {
+            tx=sl;
+        }
+        System.out.println("name: "+ nm);
+        System.out.println("age: "+ age);
+        System.out.println("annual salary: "+ sl);
+        System.out.println("tax amount: "+ tx);
+
+
+
+
+    }
+}
+
+
