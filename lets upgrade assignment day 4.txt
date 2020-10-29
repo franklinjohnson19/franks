@@ -1,0 +1,105 @@
+package com.marvel;
+
+import java.util.Scanner;
+
+//Question 1
+//class Main
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Avenger[] info=new Avenger[5];
+	for(int i=0;i<5;i++)
+    {
+        info[i]=new Avenger();
+        info[i].getDetails();
+    }
+    for(int i=0;i<5;i++)
+    {
+        info[i].displayDetails();
+
+    }
+    }
+
+}
+
+//class Avenger
+package com.marvel;
+import java.util.Scanner;
+public class Avenger
+{
+    Scanner sc=new Scanner(System.in);
+    public String name,power,weapon,planet;
+    public int age;
+    public void getDetails()
+    {
+        System.out.println("enter avenger name");
+        name=sc.nextLine();
+        System.out.println("enter avenger power");
+        power=sc.nextLine();
+        System.out.println("enter avenger weapon");
+        weapon=sc.nextLine();
+        System.out.println("enter avenger planet");
+        planet=sc.nextLine();
+
+    }
+    public void displayDetails()
+    {
+        System.out.println("marvel name is "+name+",power is "+power+" ,weapon is "+weapon+" and from the planet "+planet );
+
+    }
+
+}
+
+//Question 2
+
+package com.numbers;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int arr[]=new int[5];
+        System.out.println("enter 5 numbers");
+        for(int i=0;i<5;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("odd number from the given numbers are: ");
+        for(int i=0;i<5;i++){
+            if(arr[i]%2!=0){
+                System.out.println(arr[i]);
+            }
+        }
+
+ }
+}
+
+//Question 3
+
+package com.numbers;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int arr[]=new int[5];
+        System.out.println("enter 5 numbers");
+        for(int i=0;i<5;i++){
+            arr[i]=sc.nextInt();
+        }
+        int sum=0;
+        for(int i=0;i<5;i++){
+            sum=sum+arr[i];
+        }
+        System.out.println("sum of the entere1d numbers is "+sum);
+    }
+}
+
+
+
+
