@@ -1,0 +1,214 @@
+package com.day8;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// employee interface
+        Employee e1=new Employee1();
+        Employee e2=new Employee2();
+        e1.getDetails();
+        e1.displayDetails();
+        e2.getDetails();
+        e2.displayDetails();
+    }
+}
+
+package com.day8;
+
+public interface Employee {
+
+    public void getDetails();
+    public void displayDetails();
+
+
+}
+
+package com.day8;
+import java.util.Scanner;
+public class Employee1 implements Employee {
+    Scanner sc= new Scanner(System.in);
+    String name,designation;
+    int age,salary;
+    @Override
+    public void getDetails() {
+        System.out.println("enter emplyoee name");
+        name=sc.nextLine();
+        System.out.println("enter designation");
+        designation=sc.nextLine();
+        System.out.println("enter age");
+        age=sc.nextInt();
+        System.out.println("enter salary");
+        salary=sc.nextInt();
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("employee name: "+name);
+        System.out.println("designation: "+designation);
+        System.out.println("age "+age);
+        System.out.println("salary: "+salary);
+
+    }
+}
+
+package com.day8;
+
+import java.util.Scanner;
+
+public class Employee2 implements Employee {
+    Scanner sc= new Scanner(System.in);
+    String name,designation;
+    int age,salary;
+    @Override
+    public void getDetails() {
+        System.out.println("enter emplyoee name");
+        name=sc.nextLine();
+        System.out.println("enter employee designation");
+        designation=sc.nextLine();
+        System.out.println("enter employee age");
+        age=sc.nextInt();
+        System.out.println("enter employee salary");
+        salary=sc.nextInt();
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("employee name: "+name);
+        System.out.println("employee designation: "+designation);
+        System.out.println("emplyoee age"+age);
+        System.out.println("employee salary: "+salary);
+
+    }
+}
+
+
+
+____________________________________________________________________________________________________
+
+
+
+package com.day8;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // occupation interface
+        Doctor[] doctor = new Doctor[3];
+        Engineer[] engineer = new Engineer[3];
+        Pilot[] pilot = new Pilot[3];
+
+
+        for (int i = 0; i < 3; i++)
+            {
+                doctor[i] = new Doctor();
+                doctor[i].getDetails();
+                doctor[i].displayDetails();
+            }
+                for ( int i = 0; i < 3; i++)
+                {
+
+                    engineer[i] = new Engineer();
+                    engineer[i].getDetails();
+                    engineer[i].displayDetails();
+                }
+                for ( int i = 0; i < 3; i++)
+                {
+                    pilot[i] = new Pilot();
+                    pilot[i].getDetails();
+                    pilot[i].displayDetails();
+                }
+
+            }
+
+
+        }
+
+    
+
+package com.day8;
+
+public interface occupation {
+    public void getDetails();
+    public void displayDetails();
+
+
+}
+
+package com.day8;
+import java.util.Scanner;
+public class Doctor implements occupation {
+    Scanner sc=new Scanner(System.in);
+    String workNature,peopleDepended,influence;
+
+    @Override
+    public void getDetails() {
+        System.out.println("write about the work nature of Doctor job");
+        workNature=sc.nextLine();
+        System.out.println("enter people depended upon you");
+        peopleDepended= sc.nextLine();
+        System.out.println("enter the influences you have");
+        influence=sc.nextLine();
+
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("WORK NATURE of DOCTOR: "+workNature);
+        System.out.println("PEOPLE DEPENDED: "+peopleDepended);
+        System.out.println("INFLUENCES: "+influence);
+
+    }
+}
+
+package com.day8;
+
+import java.util.Scanner;
+
+public class Engineer implements occupation {
+    Scanner sc=new Scanner(System.in);
+    String workNature,peopleDepended,influence;
+
+    @Override
+    public void getDetails() {
+        System.out.println("write about the work nature of ENGINEER job");
+        workNature=sc.nextLine();
+        System.out.println("enter people depended upon you");
+        peopleDepended= sc.nextLine();
+        System.out.println("enter the influences you have");
+        influence=sc.nextLine();
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("WORK NATURE of ENGINEER: "+workNature);
+        System.out.println("PEOPLE DEPENDED: "+peopleDepended);
+        System.out.println("INFLUENCES: "+influence);
+
+    }
+}
+
+package com.day8;
+
+import java.util.Scanner;
+
+public class Pilot implements occupation {
+    Scanner sc=new Scanner(System.in);
+    String workNature,peopleDepended,influence;
+    @Override
+    public void getDetails() {
+        System.out.println("write about the work nature of PILOT job");
+        workNature=sc.nextLine();
+        System.out.println("enter people depended upon you");
+        peopleDepended= sc.nextLine();
+        System.out.println("enter the influences you have");
+        influence=sc.nextLine();
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("WORK NATURE of PILOT: "+workNature);
+        System.out.println("PEOPLE DEPENDED: "+peopleDepended);
+        System.out.println("INFLUENCES: "+influence);
+
+    }
+}
