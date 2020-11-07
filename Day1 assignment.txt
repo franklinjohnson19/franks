@@ -1,0 +1,19 @@
+print("LETS UPGRADE")
+------------------------------------------------------------
+# answer for 1st question:
+    RAINBOW
+
+-------------------------------------------------------------
+costPrice=input()
+sellingPrice=input()
+if (costPrice>sellingPrice):
+    print("LOSS")
+elif (costPrice<sellingPrice):
+    print("PROFIT")
+else:
+    print("NEITHER")
+
+--------------------------------------------------------------
+euro=int(input())
+rupees=euro*80
+print(rupees)
